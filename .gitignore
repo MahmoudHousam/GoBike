@@ -12,3 +12,4 @@
 201905-fordgobike-tripdata.csv
 201905-baywheels-tripdata.csv
 .ipynb_checkpoints
+**/__pycache__
