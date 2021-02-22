@@ -49,6 +49,14 @@ def explore_nans(df, title, chart_image=False):
 
 
 def seasons(row):
+    """It creats season column
+
+    Args:
+        row (string): one of months of year ["January", "February", "March", etc]
+
+    Returns:
+        (string): ["Spring", "Summer", "Autumn", "Winter"]
+    """
     if row["start_month"] in ["March", "April", "May"]:
         return "Spring"
     elif row["start_month"] in ["June", "July", "August"]:
@@ -57,3 +65,22 @@ def seasons(row):
         return "Autumn"
     else:
         return "Winter"
+
+
+def age_group(row):
+    """It creates new column that holds age groups
+
+    Args:
+        row (int): age
+
+    Returns:
+        (string): ["Youth", "Adult", "Older"]
+    """
+    if row["age"] < 18:
+        return "Age Not Available"
+    elif 18 < row["age"] <= 30:
+        return "Youth"
+    elif 30 < row["age"] <= 60:
+        return "Adult"
+    else:
+        return "Older"
